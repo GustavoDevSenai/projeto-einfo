@@ -5,14 +5,16 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     name: Build e Push GHCR
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      packages: write
+    
 
     steps:
       - name: Baixar código
