@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: projeto-einfo
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: projeto-einfo
+  
+  template:
+    metadata:
+      labels:
+        app: projeto-einfo
+    
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/gustavodevsenai/projeto-einfo:v1
+
+          ports:
+            - containerPort: 3333
